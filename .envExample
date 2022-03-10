@@ -1,0 +1,3 @@
+DBURL = 'your database link'
+JWT_SECRET = 'shhhhh'
+JWT_EXPIRE= 2h
