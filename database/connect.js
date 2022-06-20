@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config({ path: 'ENV_FILENAME' });
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
