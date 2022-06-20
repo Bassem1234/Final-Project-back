@@ -4,8 +4,8 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 //set up exxpress app
 const app = express();
- const port = 4000;
-//const port = process.env.port || 4000;
+// const port = 4000;
+const port = process.env.port || 4000;
 const cors = require('cors');
 app.use(cors({
     origin: "http://localhost:4200",
@@ -50,7 +50,7 @@ const emailApi = require('./routes/mailApi');
 app.use('/api/', emailApi);
 
 // listen for requests
-app.listen(process.env.port || 4000, () => {
+app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 
