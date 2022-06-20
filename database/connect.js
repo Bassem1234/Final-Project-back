@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ path: 'ENV_FILENAME' });
+DBURL = 'mongodb+srv://bassem:24111991aA@cluster0.ec7n2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
 };
 
 mongoose
-  .connect(process.env.DBURL, options)
+  .connect(DBURL, options)
   .then(() => console.log("Connected to Mongo"))
   .catch((err) => console.log(err));
