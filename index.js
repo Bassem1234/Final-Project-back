@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 // const port = 4000;
 const port = process.env.port || 4000;
+const host = '0.0.0.0';
 const cors = require('cors');
 app.use(cors({
     origin: "http://localhost:4200",
@@ -50,7 +51,7 @@ const emailApi = require('./routes/mailApi');
 app.use('/api/', emailApi);
 
 // listen for requests
-app.listen(process.env.port || 4000, '0.0.0.0', () => {
+app.listen(port, host, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 
