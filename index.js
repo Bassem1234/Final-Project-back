@@ -50,7 +50,7 @@ const emailApi = require('./routes/mailApi');
 app.use('/api/', emailApi);
 
 // listen for requests
-app.listen(port, () => {
+app.listen(process.env.port || 4000, '0.0.0.0', () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 
