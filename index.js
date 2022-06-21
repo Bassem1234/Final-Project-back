@@ -48,7 +48,6 @@ app.use('/api', adminApi);
 
 //send Email
 const emailApi = require('./routes/mailApi');
-const Promoter = require('./models/eventPromoter');
 app.use('/api/', emailApi);
 
 // listen for requests
@@ -57,14 +56,3 @@ app.listen(port, () => {
 });
 
 app.get('/', (req,res) => {res.send("Hello Bassem")});
-//get the list of promoters from a database
-router.get('/promoters',  async (req, res) => {
-    try {
-        const promoter = await Promoter.find({});
-        res.json(promoter);
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
