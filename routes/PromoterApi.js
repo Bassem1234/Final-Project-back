@@ -29,7 +29,7 @@ const maxSize = 1 * 1024 * 1024;
 const Multer = multer({ storage: myStorage, limits: { fileSize: maxSize } });
 
 //get the list of promoters from a database
-router.get('/promoters', passport.authenticate('bearer', { session: false }), async (req, res) => {
+router.get('/promoters', async (req, res) => {
     try {
         const promoter = await Promoter.find({});
         res.json(promoter);
