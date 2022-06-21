@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 //set up exxpress app
 const app = express();
 // const port = 4000;
-const port = process.env.port || 4000;
+const port = process.env.PORT || 4000;
 const host = '0.0.0.0';
 const cors = require('cors');
 app.use(cors({
@@ -51,7 +51,7 @@ const emailApi = require('./routes/mailApi');
 app.use('/api/', emailApi);
 
 // listen for requests
-app.listen(port, host, () => {
+app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 
