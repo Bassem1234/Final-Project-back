@@ -29,7 +29,7 @@ const Multer = multer({ storage: myStorage, limits: { fileSize: maxSize } });
 router.post('/upload', Multer.single('file'), async (req, res) => {
     console.log(req.file);
     if (req.file !== undefined) {
-        let promoter = await Promoter.findById('62122d5d033715f6c8f733af');
+        const promoter = await Promoter.findById('62122d5d033715f6c8f733af');
         promoter.events[0].eventName = process.env.PICTURE_URL + req.file;
         console.log(promoter.events[0]);
         res.send({ message: 'File uploaded successfully' });
