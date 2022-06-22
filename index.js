@@ -56,4 +56,6 @@ app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 console.log(process.env.DBURL)
+console.log(process.env.JWT_SECRET)
+console.log(process.env.JWT_EXPIRE)
 app.get('/', (req,res) => {res.send("Hello hello Bassem")});
