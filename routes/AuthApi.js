@@ -114,6 +114,7 @@ router.post('/login', async (req, res) => {
                     adminId: admin._id,
                     email: admin.email
                 }
+                console.log(process.env.JWT_Secret);
                 const token = jwt.sign(tokenData, process.env.JWT_Secret, {expiresIn: process.env.JWT_EXPIRE});
                 res.send({message: 'Auth Sucessful', token: token, user: admin, id: admin._id});
             }
