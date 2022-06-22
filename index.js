@@ -10,7 +10,7 @@ const host = '0.0.0.0';
 const cors = require('cors');
 app.use(cors({
     //origin: "http://localhost:4200",
-    origin: "https://tsekers.herokuapp.com"
+    origin: "http://tsekers.herokuapp.com"
 }));
 
 //connect to mongoDB cloud
