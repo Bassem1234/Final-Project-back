@@ -84,7 +84,7 @@ router.post('/login', async (req, res) => {
                     userId: user._id,
                     email: user.email
                 };
-                const token = jwt.sign(tokenData, process.env.JWT_Secret, {expiresIn: process.env.JWT_EXPIRE});
+                const token = jwt.sign(tokenData, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE});
                 res.send({message: 'Auth Successful', token: token, user: user, id: user._id});
             } 
             else {
@@ -99,7 +99,7 @@ router.post('/login', async (req, res) => {
                     promoterId: promoter._id,
                     email: promoter.email
                 }
-                const token = jwt.sign(tokenData, process.env.JWT_Secret, {expiresIn: process.env.JWT_EXPIRE});
+                const token = jwt.sign(tokenData, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE});
                 res.send({message: 'Auth Sucessful', token: token, user: promoter, id: promoter._id});
             }
             else {
@@ -114,8 +114,7 @@ router.post('/login', async (req, res) => {
                     adminId: admin._id,
                     email: admin.email
                 }
-                console.log(process.env.JWT_Secret);
-                const token = jwt.sign(tokenData, process.env.JWT_Secret, {expiresIn: process.env.JWT_EXPIRE});
+                const token = jwt.sign(tokenData, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE});
                 res.send({message: 'Auth Sucessful', token: token, user: admin, id: admin._id});
             }
             else {
