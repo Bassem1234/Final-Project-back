@@ -18,7 +18,7 @@ require('./database/connect');
 //bearer strategy
 require('./passport/bearerStrategy');
 
-app.use('/api/upload', express.static(__dirname +'/upload'));
+app.use('/upload', express.static(__dirname +'/upload'));
 
 app.use(express.json());
 
