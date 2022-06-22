@@ -55,5 +55,5 @@ app.use('/api/', emailApi);
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
-
+console.log(process.env.P)
 app.get('/', (req,res) => {res.send("Hello hello Bassem")});
